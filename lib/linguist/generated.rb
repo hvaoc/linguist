@@ -147,7 +147,7 @@ module Linguist
     # Returns true or false.
     def has_source_map?
       return false unless extname.downcase == '.js'
-      lines.last(2).any? { |line| line.start_with?('//# sourceMappingURL') }
+      lines.last(2).any? { |line| line.start_with?('//# sourceMappingURL') || line.start_with?('/*# sourceMappingURL') }
     end
 
     # Internal: Is the blob a generated source map?
