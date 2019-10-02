@@ -146,6 +146,8 @@ module Linguist
     #
     # Returns true or false.
     def has_source_map?
+      puts 'has_source_map\n'
+      puts lines.last(2)
       return false unless extname.downcase == '.js'
       lines.last(2).any? { |line| line.start_with?('//# sourceMappingURL') || line.start_with?('/*# sourceMappingURL') }
     end
